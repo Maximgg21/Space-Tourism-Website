@@ -17,15 +17,15 @@ export default function Layout() {
     }
 
     return (
-        <>
+        <div className='relative h-full overflow-hidden'>
             <header className='flex justify-between items-center absolute w-full mt-3'>
                 <div className='flex items-center gap-5 ml-10 w-full'>
-                    <div className='overflow-hidden relative bg-white w-10 h-10 rounded-full flex items-center justify-center'>
+                    <div className='overflow-hidden relative bg-white w-10 h-10 rounded-full flex items-center justify-center shrink-0  '>
                         <div className='absolute w-8 h-8 bg-black clip-star'></div>
                     </div>
-                    <hr className='border-gray-500 h-1 w-full translate-x-5' />
+                    <hr className='border-white/25 w-full translate-x-5 z-10 max-md:hidden' />
                 </div>
-                <nav className='font-barlowCondensed tracking-widest flex gap-14 h-12 bg-white pl-32 pr-10 bg-opacity-5 backdrop-filter'>
+                <nav className='font-barlowCondensed tracking-widest flex gap-14 h-12 bg-white pl-32 pr-10 bg-opacity-5 backdrop-blur-lg'>
                     <CustomLink to="/" number="00">Home</CustomLink>
                     <CustomLink to="/destination" number="01">Destination</CustomLink>
                     <CustomLink to="/crew" number="02">Crew</CustomLink>
@@ -34,6 +34,6 @@ export default function Layout() {
             </header>
             
             <Outlet setCurrPath={setCurrPath}/>
-        </>
+        </div>
     )
 }
